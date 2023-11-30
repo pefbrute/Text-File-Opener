@@ -20,12 +20,16 @@ if file_name:  # Check if the user entered a name
     if not file_name.endswith('.txt'):
         file_name += '.txt'
     file_path = os.path.join(directory_path, file_name)
+
+    # Extract base file name without extension
+    base_file_name = os.path.splitext(file_name)[0]
     
-    # Create a new .txt file in the directory
-    with open(file_path, 'w') as file:
-        file.write('')  # Creates an empty file
+    # Check if the file exists, create it and write the base file name if it doesn't
+    if not os.path.exists(file_path):
+        with open(file_path, 'w') as file:
+            file.write(base_file_name + "\n")  # Write the base file name at the beginning
     
-    # Open the newly created file in the default text editor
+    # Open the file in the default text editor
     subprocess.run(['gedit', file_path])
 else:
     print("File creation cancelled.")  # The user cancelled the operation.
