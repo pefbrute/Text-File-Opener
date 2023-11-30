@@ -3,6 +3,12 @@ This project helps me quickly make the file in specific directory. This project 
 
 Autokey - https://github.com/autokey/autokey
 
-GIF - How It Works
+## Presentation Of Functionality
 
 ![Functionality](https://github.com/pefbrute/Text-File-Opener/blob/main/How%20Text%20Opener%20Works.gif)
+
+## Installing
+
+```
+sudo apt-get install autokey-gtk
+```
